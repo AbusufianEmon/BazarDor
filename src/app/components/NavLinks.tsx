@@ -10,7 +10,7 @@ const NavLinks = async () => {
             {data.map((n: { id: string; nameBn: string; icon: string }) => (
                 <Link
                     key={n.id}
-                    href={`${n.id}`}
+                    href={`/category/${n.id}`}
                     className="flex h-8 shrink-0 items-center gap-1 whitespace-nowrap rounded-full px-3 text-xs sm:text-sm hover:bg-base-200"
                 >
                     <span>{n.icon}</span>

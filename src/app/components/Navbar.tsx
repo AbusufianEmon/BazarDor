@@ -17,8 +17,8 @@ import NavLinks from "./NavLinks";
 
         return (
 
-            <div>
-                <div className=" flex justify-between navbar bg-base-100 container mx-auto">
+            <div className="border-b border-gray-300 sticky top-0 z-50 bg-base-100">
+                <div className=" flex justify-between navbar container mx-auto">
                     <div className="navbar-start">
 
                         <Link href="/" className="flex items-center gap-3">
@@ -44,10 +44,10 @@ import NavLinks from "./NavLinks";
                     </div>
 
                     <div className='flex gap-4'>
-                        <button className="text-xs sm:text-base md:text-lg">
+                        <button className="btn-sm sm:btn-md hover:cursor-pointer">
                             সাইন ইন
                         </button>
-                        <button className="bg-green-600 text-xs sm:text-base md:text-lg px-1.5 py-1.5 sm:px-2.5 sm:py-1.5 md:px-3 md:py-2 shadow-lg shadow-black/50 rounded-xl">
+                        <button className="btn btn-success bg-green-600 btn-sm sm:btn-md text-white rounded-lg md:px-5">
                             সাইন আপ
                         </button>
                     </div>
