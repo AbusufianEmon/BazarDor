@@ -19,8 +19,8 @@ const UserInfo = () => {
 
     if (!user) {
         return (
-            <div className="flex gap-4 items-center">
-                <Link href="/signin" className="btn-sm sm:btn-md hover:cursor-pointer">
+            <div className="flex gap-1.5 sm:gap-4 items-center">
+                <Link href="/signin" className="btn btn-sm sm:btn-md border-hidden bg-white hover:cursor-pointer">
                     সাইন ইন
                 </Link>
                 <Link href="/signup" className="btn btn-success bg-green-600 btn-sm sm:btn-md text-white rounded-lg md:px-5">

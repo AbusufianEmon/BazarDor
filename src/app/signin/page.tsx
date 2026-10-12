@@ -4,6 +4,8 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import SocialButtons from "@/app/components/SocialButtons";
 
 type Errors = {
     email?: string;
@@ -54,6 +56,7 @@ const SignInPage = () => {
         }
     };
 
+
     return (
         <div className="flex flex-col items-center justify-center bg-base-200 py-10">
 
@@ -74,8 +77,19 @@ const SignInPage = () => {
                     {errors.password && <p className="text-sm text-red-600">{errors.password}</p>}
 
                     <button type="submit" className="btn rounded bg-green-600 mt-4 text-white">সাইন ইন</button>
+                    <SocialButtons />
+
+                    <p className="mt-2 text-center text-sm">
+                        অ্যাকাউন্ট নেই?{" "}
+                        <Link href="/signup" className="font-medium text-green-600 hover:underline">
+                            সাইন আপ করুন
+                        </Link>
+                    </p>
                 </fieldset>
             </form>
+            <Link href="/" className="mt-6 text-sm hover:underline">
+                ← হোম পেজে ফিরে যান
+            </Link>
 
         </div>
     );

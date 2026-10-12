@@ -4,6 +4,8 @@ import { useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Link from "next/link";
+import SocialButtons from "@/app/components/SocialButtons";
 
 type Errors = {
     name?: string;
@@ -95,8 +97,19 @@ const SignUpPage = () => {
                     {errors.confirmPassword && <p className="text-sm text-red-600">{errors.confirmPassword}</p>}
 
                     <button type="submit" className="btn rounded bg-green-600 mt-4 text-white">অ্যাকাউন্ট তৈরি করুন</button>
+                    <SocialButtons />
+
+                    <p className="mt-2 text-center text-sm">
+                        অ্যাকাউন্ট আছে?{" "}
+                        <Link href="/signin" className="font-medium text-green-600 hover:underline">
+                            সাইন ইন করুন
+                        </Link>
+                    </p>
                 </fieldset>
             </form>
+            <Link href="/" className="mt-6 text-sm hover:underline">
+                ← হোম পেজে ফিরে যান
+            </Link>
 
         </div>
     );
