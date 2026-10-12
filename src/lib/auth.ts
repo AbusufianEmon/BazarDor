@@ -7,6 +7,13 @@ const db = client.db("bazaar_dor");
 
 export const auth = betterAuth({
 
+    baseURL: process.env.BETTER_AUTH_URL,
+    trustedOrigins: [
+        "https://bazar-dor-ir-obot.vercel.app",
+        "https://bazar-dor-seven-zeta.vercel.app",
+        "http://localhost:3000",
+    ],
+
     emailAndPassword: {
         enabled: true,
     },
