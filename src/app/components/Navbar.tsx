@@ -2,6 +2,7 @@ import Link from "next/link";
 import Image from "next/image";
 import Logo from "@/assets/logo-icon.png";
 import NavLinks from "./NavLinks";
+import UserInfo from "./UserInfo";
 
 const NavPage = () => {
 
@@ -37,15 +38,8 @@ const NavPage = () => {
                     </Link>
 
                 </div>
-
-                <div className='flex gap-4 items-center'>
-                    <Link href="/signin" className="btn-sm sm:btn-md hover:cursor-pointer">
-                        সাইন ইন
-                    </Link>
-                    <Link href="/signup" className="btn btn-success bg-green-600 btn-sm sm:btn-md text-white rounded-lg md:px-5">
-                        সাইন আপ
-                    </Link>
-                </div>
+                <UserInfo />
+                
             </div>
             <NavLinks />
         </div>
