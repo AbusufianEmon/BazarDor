@@ -7,12 +7,8 @@ import { authClient } from "@/lib/auth-client";
 
 const ProfilePage = () => {
     const router = useRouter();
-    const { data: session, isPending } = authClient.useSession();
+    const { data: session } = authClient.useSession();
     const user = session?.user;
-
-    useEffect(() => {
-        if (!isPending && !user) router.push("/signin");
-    }, [isPending, user, router]);
 
     const handleSignOut = async () => {
         await authClient.signOut();

@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { authClient } from "@/lib/auth-client";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
@@ -15,6 +15,14 @@ type Errors = {
 const SignInPage = () => {
     const router = useRouter();
     const [errors, setErrors] = useState<Errors>({});
+
+    useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("protected")) {
+        toast.error("এই পেজ দেখতে সাইন ইন করুন।", { id: "protected" });
+        window.history.replaceState(null, "", "/signin"); // clean the URL
+    }
+}, []);
 
     const onSubmit = async (event: React.SubmitEvent<HTMLFormElement>) => {
         event.preventDefault();
